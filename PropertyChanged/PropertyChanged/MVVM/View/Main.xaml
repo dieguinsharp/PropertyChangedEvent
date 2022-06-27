@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PropertyChanged.MVVM.View.Main"
+             Title="{Binding Title}"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="AliceBlue"
+                   CornerRadius="20"
+                   Margin="15, 15, 15, 5">
+                <Label Text="{Binding Log, Mode=TwoWay}"
+                       TextColor="Green"
+                       HorizontalOptions="CenterAndExpand" />
+            </Frame>
+            <Frame BackgroundColor="AliceBlue"
+                   CornerRadius="20"
+                   Margin="15,5">
+                <StackLayout VerticalOptions="Start"
+                         Spacing="25">
+                    <Label Text="{Binding Person.Id, Mode=OneWay}"
+                HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding Person.Name, Mode=TwoWay}"
+                HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding Person.CPF, Mode=TwoWay}" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding Person.Birth, Mode=OneWay}"
+                HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="AliceBlue"
+                   CornerRadius="20"
+                   Margin="15,5"
+                   Padding="5">
+                <StackLayout VerticalOptions="End"
+                         Margin="20">
+                    <Entry Placeholder="CPF" Text="{Binding Person.CPF, Mode=TwoWay}"/>
+                    <Entry Placeholder="Name" Text="{Binding Person.Name, Mode=TwoWay}"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
